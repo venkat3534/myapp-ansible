@@ -6,11 +6,15 @@
       yum:
         name: "httpd"
         state: "present"
+      tags:
+        - megastar
     - name: Start Apache server
       service:
         name: httpd
         state: started
         enabled: True
+      tags:
+        - superstar
     - name: Deploy static website
       copy:
         src: index.html
